@@ -8,9 +8,9 @@
 int mock_test() {
   // int *n = NULL;
   // *n = 0;
-  while(1)
+  while(1) {}
   printf("blablablab\n");
-  return (0);
+  return (-1);
 }
 
 int main() {

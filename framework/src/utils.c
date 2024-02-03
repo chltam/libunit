@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_atoi_test.c                                     :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 14:05:24 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 18:48:00 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/03 18:58:36 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/03 19:01:32 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./atoi_tests.h"
-#include <unistd.h>
+#include "../includes/libunit.h"
 
-/* Test with timeout  */
-/* Expected: OK       */
-int	test_03(void)
+int	w_check(int status)
 {
-	int	result;
-	int	expected;
-
-	result = ft_atoi("123a1");
-	expected = 123;
-	sleep(15);
-	if (result == expected)
-		return (0);
-	else
-		return (-1);
+	if (WIFSIGNALED(status))
+		return (WTERMSIG(status));
+	if (WIFEXITED(status))
+		return (WEXITSTATUS(status));
+	return (-1);
 }

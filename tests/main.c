@@ -6,13 +6,12 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:32:33 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 16:32:34 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:01:33 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include "../Libft/libft.h"
 #include "./strlen/strlen.h"
 
 int	main(void)

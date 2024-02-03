@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   atoi_tests.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
+/*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 14:08:26 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 17:29:10 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/03 18:01:11 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ int		test_12(void);
 int		test_13(void);
 int		test_14(void);
 int		test_15(void);
+
+/* Launcher */
+int		atoi_launcher(void);
 
 #endif

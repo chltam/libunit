@@ -6,7 +6,7 @@
 /*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:26:15 by htam              #+#    #+#             */
-/*   Updated: 2024/02/03 19:10:37 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/03 20:07:20 by htam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	tester(t_unit_test *test, t_unit_test *head)
 	}
 	if (pid == 0)
 	{
+		signal (SIGALRM, exit);
+		alarm(TOUT);
 		child_logger(test->test_fun);
 		status = test->fun();
 		free_exit(head, status);
@@ -71,10 +73,7 @@ int	tester(t_unit_test *test, t_unit_test *head)
 	else
 	{
 		wait(&status);
-		if (WIFSIGNALED(status))
-			return (WTERMSIG(status));
-		if (WIFEXITED(status))
-			return (WEXITSTATUS(status));
+		return (w_check(status));
 	}
 	return (-2);
 }
@@ -100,6 +99,8 @@ int	output(int test_result, char *fun, char *name)
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGPIPE"RESET);
 	else if (test_result == SIGILL)
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGILL"RESET);
+	else if (test_result == SIGALRM)
+		ft_printf("%s : %s : [%s]\n", fun, name, RED"TIMEOUT"RESET);
 	else
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"UNKNOWN"RESET);
 	return (0);
