@@ -15,7 +15,7 @@ INC			=	-I ./includes/\
 
 # Sources
 SRC_PATH	=	src/
-SRC			=	libunit.c 
+SRC			=	libunit.c free.c log.c
 
 SRCS		= $(addprefix $(SRC_PATH), $(SRC))
 

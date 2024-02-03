@@ -6,23 +6,23 @@
 /*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:26:15 by htam              #+#    #+#             */
-/*   Updated: 2024/02/03 17:00:28 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/03 19:10:37 by htam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libunit.h"
 
-void	free_list(t_unit_test *head)
-{
-	t_unit_test	*temp;
+// void	free_list(t_unit_test *head)
+// {
+// 	t_unit_test	*temp;
 
-	while (head)
-	{
-		temp = head;
-		head = head->next;
-		free(temp);
-	}
-}
+// 	while (head)
+// 	{
+// 		temp = head;
+// 		head = head->next;
+// 		free(temp);
+// 	}
+// }
 
 void	load_test(t_unit_test **list, char *test_fun,
 					char *test_name, t_test_function f)
@@ -34,8 +34,7 @@ void	load_test(t_unit_test **list, char *test_fun,
 	if (!new_test)
 	{
 		ft_printf("Cannot load new test\n\n");
-		free_list(*list);
-		exit(1);
+		free_exit(*list, 1);
 	}
 	new_test->fun = f;
 	new_test->test_fun = test_fun;
@@ -52,7 +51,7 @@ void	load_test(t_unit_test **list, char *test_fun,
 	test->next = new_test;
 }
 
-int	tester(t_test_function f, t_unit_test *head)
+int	tester(t_unit_test *test, t_unit_test *head)
 {
 	int	pid;
 	int	status;
@@ -61,14 +60,13 @@ int	tester(t_test_function f, t_unit_test *head)
 	if (pid < 0)
 	{
 		ft_printf("fork error\n");
-		free_list(head);
-		exit(1);
+		free_exit(head, 1);
 	}
 	if (pid == 0)
 	{
-		status = (*f)();
-		free_list(head);
-		exit(status);
+		child_logger(test->test_fun);
+		status = test->fun();
+		free_exit(head, status);
 	}
 	else
 	{
@@ -94,6 +92,14 @@ int	output(int test_result, char *fun, char *name)
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGSEGV"RESET);
 	else if (test_result == SIGBUS)
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGBUS"RESET);
+	else if (test_result == SIGABRT)
+		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGABRT"RESET);
+	else if (test_result == SIGFPE)
+		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGFPE"RESET);
+	else if (test_result == SIGPIPE)
+		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGPIPE"RESET);
+	else if (test_result == SIGILL)
+		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGILL"RESET);
 	else
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"UNKNOWN"RESET);
 	return (0);
@@ -111,9 +117,10 @@ int	launch_test(t_unit_test **list)
 	test = *list;
 	while (test)
 	{
-		test_result = tester(test->fun, *list);
+		test_result = tester(test, *list);
 		total_test += 1;
 		passed_test += output(test_result, test->test_fun, test->test_name);
+		parent_logger(test, test_result);
 		test = test->next;
 	}
 	ft_printf("%d/%d tests checked\n", passed_test, total_test);

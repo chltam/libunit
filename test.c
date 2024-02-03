@@ -3,11 +3,13 @@
 #include <stdio.h>
 #include "./framework/includes/libunit.h"
 
-//cc test.c -g -L ./framework -lunit  
+// cc test.c -g -L ./framework -lunit
 
 int mock_test() {
   // int *n = NULL;
   // *n = 0;
+  while(1)
+  printf("blablablab\n");
   return (0);
 }
 

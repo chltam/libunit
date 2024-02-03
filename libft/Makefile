@@ -1,15 +1,15 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: htam <marvin@42.fr>                        +#+  +:+       +#+         #
+#    By: htam <htam@student.42berlin.de>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 11:49:25 by htam              #+#    #+#              #
-#    Updated: 2022/11/28 11:49:27 by htam             ###   ########.fr        #
+#    Updated: 2024/02/03 19:21:24 by htam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-Library := libft
+
 NAME := libft.a
 CFLAGS := -Werror -Wall -Wextra
 CC := cc
@@ -34,6 +34,7 @@ files := ft_isalpha.c \
 		ft_isprint.c \
 		ft_memmove.c \
 		ft_strjoin.c \
+		ft_strjoin_free_s1.c \
 		ft_strnstr.c \
 		ft_toupper.c \
 		ft_isalnum.c \
