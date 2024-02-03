@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
+/*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:26:15 by htam              #+#    #+#             */
-/*   Updated: 2024/02/03 17:00:28 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/03 18:46:46 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int	tester(t_test_function f, t_unit_test *head)
 	}
 	if (pid == 0)
 	{
+		signal (SIGALRM, exit);
+		alarm(TOUT);
 		status = (*f)();
 		free_list(head);
 		exit(status);

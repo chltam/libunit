@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 13:57:24 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 18:00:00 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:49:12 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	atoi_launcher(void)
 	testlist = NULL;
 	load_test(&testlist, "ATOI", "Ok test", &test_01);
 	load_test(&testlist, "ATOI", "KO test", &test_02);
-	load_test(&testlist, "ATOI", "Ok test", &test_03);
+	load_test(&testlist, "ATOI", "Timeout test", &test_03);
 	load_test(&testlist, "ATOI", "Ok test", &test_04);
 	load_test(&testlist, "ATOI", "Ok test", &test_05);
 	load_test(&testlist, "ATOI", "Ok test", &test_06);

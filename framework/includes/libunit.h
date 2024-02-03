@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libunit.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
+/*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 22:19:56 by htam              #+#    #+#             */
-/*   Updated: 2024/02/03 16:54:25 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/03 18:46:41 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@
 # define CYAN "\033[1;36m"
 # define WHITE "\033[1;37m"
 # define RESET "\033[0m"
+
+# ifndef TOUT
+#  define TOUT 10
+# endif // !TOUT
 
 typedef int	(*t_test_function)(void);
 
