@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:26:15 by htam              #+#    #+#             */
-/*   Updated: 2024/02/03 19:00:55 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:09:49 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ int	output(int test_result, char *fun, char *name)
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGSEGV"RESET);
 	else if (test_result == SIGBUS)
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"SIGBUS"RESET);
+	else if (test_result == 14)
+		ft_printf("%s : %s : [%s]\n", fun, name, RED"TIMEOUT"RESET);
 	else
 		ft_printf("%s : %s : [%s]\n", fun, name, RED"UNKNOWN"RESET);
 	return (0);

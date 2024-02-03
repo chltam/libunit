@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/02 21:46:01 by astavrop          #+#    #+#              #
-#    Updated: 2024/02/03 18:10:24 by astavrop         ###   ########.fr        #
+#    Updated: 2024/02/03 19:10:44 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ rm				= rm -f
 
 all: $(NAME)
 
-.PHONY: compile-lft clean fclean re test compile-lunit
+.PHONY: compile-lft clean fclean re test compile-lunit clean-other
 
 
 %.o: %.c
@@ -69,5 +69,9 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME) $(LFT_BIN) $(LUNIT_BIN)
+
+clean-other:
+	$(MAKE) -C ../../libft fclean
+	$(MAKE) -C ../../framework fclean
 
 re: fclean all
