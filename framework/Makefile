@@ -37,8 +37,8 @@ $(LIBFT):
 
 $(NAME): $(OBJS)
 	@echo "Compiling libunit..."
+	cp ../libft/libft.a $(NAME)
 	@ar -rcs $(NAME) $(OBJS)
-	# @$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(INC)
 	@echo "libunit compiled."
 
 bonus: all
@@ -49,7 +49,7 @@ clean:
 	@make clean -sC $(LIBFT_PATH)
 
 fclean: clean
-	@echo "Removing cub3d..."
+	@echo "Removing libunit..."
 	@rm -f $(NAME)
 	@rm -f $(LIBFT_PATH)$(LIBFT_NAME)
 
