@@ -6,12 +6,13 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 16:05:54 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 16:06:19 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/03 18:11:10 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./atoi_tests.h"
 #include <limits.h>
+#include <stdio.h>
 
 /* Test for MIN_INT */
 /* Expected: OK     */
@@ -21,6 +22,7 @@ int	test_15(void)
 	int	expected;
 
 	result = ft_atoi("–2147483648");
+	printf("%d\n", result);
 	expected = INT_MIN;
 	if (result == expected)
 		return (0);

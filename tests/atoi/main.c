@@ -5,21 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 16:32:33 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 18:01:33 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/03 18:00:26 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/03 18:01:51 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include "./strlen/strlen.h"
+#include "./atoi_tests.h"
 
 int	main(void)
 {
-	printf("~~~\t0 = OK | -1 = KO\t~~~\n");
-	printf("Big string test\t\t\t: %i\n", big_string_test());
-	printf("Basic OK test\t\t\t: %i\n", basic_test());
-	printf("Basic KO test\t\t\t: %i\n", ko_test());
-	printf("Bus Error test\t\t\t: %i\n", sigbus_test());
-	return (0);
+	return (atoi_launcher());
 }
