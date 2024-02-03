@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 22:19:56 by htam              #+#    #+#             */
-/*   Updated: 2024/02/03 18:46:41 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:00:21 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,9 @@ void	load_test(t_unit_test **list, char *test_fun,
 			char *test_name, t_test_function f);
 int		launch_test(t_unit_test **list);
 void	free_list(t_unit_test *head);
+
+/* Utils */
+
+int		w_check(int status);
 
 #endif

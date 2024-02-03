@@ -6,7 +6,7 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 21:26:15 by htam              #+#    #+#             */
-/*   Updated: 2024/02/03 18:46:46 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/03 19:00:55 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,7 @@ int	tester(t_test_function f, t_unit_test *head)
 	else
 	{
 		wait(&status);
-		if (WIFSIGNALED(status))
-			return (WTERMSIG(status));
-		if (WIFEXITED(status))
-			return (WEXITSTATUS(status));
+		return (w_check(status));
 	}
 	return (-2);
 }
