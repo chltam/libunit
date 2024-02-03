@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.h                                           :+:      :+:    :+:   */
+/*   atoi_tests.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 20:55:18 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 12:44:15 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/03 14:08:26 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/03 16:07:41 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRLEN_H
-# define STRLEN_H
+#ifndef ATOI_TESTS_H
+# define ATOI_TESTS_H
 
 # include "../../Libft/libft.h"
 
 /* Test cases */
 
-int		basic_test(void);
-int		null_test(void);
-int		big_string_test(void);
-int		ko_test(void);
-int		sigbus_test(void);
+int		test_01(void);
+int		test_02(void);
+int		test_03(void);
+int		test_04(void);
+int		test_05(void);
+int		test_06(void);
+int		test_07(void);
+int		test_08(void);
+int		test_09(void);
+int		test_10(void);
+int		test_11(void);
+int		test_12(void);
+int		test_13(void);
+int		test_14(void);
+int		test_15(void);
 
 #endif

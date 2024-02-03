@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.h                                           :+:      :+:    :+:   */
+/*   12_atoi_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 20:55:18 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 12:44:15 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/03 15:48:15 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/03 15:49:10 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRLEN_H
-# define STRLEN_H
+#include "./atoi_tests.h"
 
-# include "../../Libft/libft.h"
+/* Basic test with just a lot of zeros */
+/* inside the string                   */
+/* Expected: OK                        */
+int	test_12(void)
+{
+	int	result;
+	int	expected;
 
-/* Test cases */
-
-int		basic_test(void);
-int		null_test(void);
-int		big_string_test(void);
-int		ko_test(void);
-int		sigbus_test(void);
-
-#endif
+	result = ft_atoi("0000000000123");
+	expected = 123;
+	if (result == expected)
+		return (0);
+	else
+		return (-1);
+}

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.h                                           :+:      :+:    :+:   */
+/*   02_atoi_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 20:55:18 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 12:44:15 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/03 14:05:23 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/03 14:13:58 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRLEN_H
-# define STRLEN_H
+#include "./atoi_tests.h"
 
-# include "../../Libft/libft.h"
+/* Basic test   */
+/* Expected: KO */
+int	test_02(void)
+{
+	int	result;
+	int	expected;
 
-/* Test cases */
-
-int		basic_test(void);
-int		null_test(void);
-int		big_string_test(void);
-int		ko_test(void);
-int		sigbus_test(void);
-
-#endif
+	result = ft_atoi("123");
+	expected = 123 + 1;
+	if (result == expected)
+		return (0);
+	else
+		return (-1);
+}

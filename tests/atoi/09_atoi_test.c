@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.h                                           :+:      :+:    :+:   */
+/*   09_atoi_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 20:55:18 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 12:44:15 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/03 15:46:24 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/03 15:46:58 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRLEN_H
-# define STRLEN_H
+#include "./atoi_tests.h"
 
-# include "../../Libft/libft.h"
+/* Basic test with minuses at  */
+/* the beginning of the string */
+/* Expected: OK                */
+int	test_09(void)
+{
+	int	result;
+	int	expected;
 
-/* Test cases */
-
-int		basic_test(void);
-int		null_test(void);
-int		big_string_test(void);
-int		ko_test(void);
-int		sigbus_test(void);
-
-#endif
+	result = ft_atoi("--123");
+	expected = 0;
+	if (result == expected)
+		return (0);
+	else
+		return (-1);
+}

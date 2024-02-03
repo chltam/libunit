@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.h                                           :+:      :+:    :+:   */
+/*   05_buserror_test.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 20:55:18 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 12:44:15 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/03 12:41:19 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/03 13:55:55 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRLEN_H
-# define STRLEN_H
+#include "strlen.h"
+#include <stdlib.h>
 
-# include "../../Libft/libft.h"
+/* ft_strlen(*(NULL))                */
+/* pointer to NULL instead of string */
+/*                                   */
+/* ================================= */
+/* Expected: SIGBUS                   */
+int	sigbus_test(void)
+{
+	char	*buffer;
 
-/* Test cases */
-
-int		basic_test(void);
-int		null_test(void);
-int		big_string_test(void);
-int		ko_test(void);
-int		sigbus_test(void);
-
-#endif
+	buffer = (char *) 0x18C0000000;
+	if (ft_strlen(buffer) == 5)
+		return (0);
+	else
+		return (-1);
+}
