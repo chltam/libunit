@@ -6,7 +6,7 @@
 #    By: htam <htam@student.42berlin.de>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 11:49:25 by htam              #+#    #+#              #
-#    Updated: 2024/02/03 19:21:24 by htam             ###   ########.fr        #
+#    Updated: 2024/02/04 14:51:23 by htam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,3 +78,5 @@ fclean:
 	rm -f $(object_files) $(object_files_bonus)
 	rm -f libft.a
 re: fclean all
+
+.PHONY: all re clean fclean

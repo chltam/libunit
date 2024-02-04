@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: htam <marvin@42.fr>                        +#+  +:+       +#+         #
+#    By: htam <htam@student.42berlin.de>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/28 19:12:42 by htam              #+#    #+#              #
-#    Updated: 2022/12/28 19:12:44 by htam             ###   ########.fr        #
+#    Updated: 2024/02/04 15:41:45 by htam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 NAME := libftprintf.a
 CC := cc
 CFLAGS := -Werror -Wextra -Wall

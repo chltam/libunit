@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: htam <htam@student.42berlin.de>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/02/04 16:09:08 by htam              #+#    #+#              #
+#    Updated: 2024/02/04 16:09:10 by htam             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= libunit.a
 
 # Compiler
@@ -51,7 +63,7 @@ clean:
 fclean: clean
 	@echo "Removing libunit..."
 	@rm -f $(NAME)
-	@rm -f $(LIBFT_PATH)$(LIBFT_NAME)
+	make fclean -sC $(LIBFT_PATH)
 
 re: fclean all
 
