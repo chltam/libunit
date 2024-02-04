@@ -6,13 +6,13 @@
 /*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 14:43:07 by htam              #+#    #+#             */
-/*   Updated: 2024/02/04 15:12:44 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/04 16:21:07 by htam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "demo.h"
 
-int	test_sigpipe()
+int	test_sigpipe(void)
 {
 	int	fd[2];
 

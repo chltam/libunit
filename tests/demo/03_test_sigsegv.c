@@ -6,17 +6,17 @@
 /*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 14:43:07 by htam              #+#    #+#             */
-/*   Updated: 2024/02/04 16:06:47 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/04 16:21:51 by htam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "demo.h"
 
-int	test_sigsegv()
+int	test_sigsegv(void)
 {
-	int *n;
+	int	*n;
 
-  n = NULL;
-  *n = 0;
-  return (0);
+	n = NULL;
+	*n = 0;
+	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 14:38:13 by htam              #+#    #+#             */
-/*   Updated: 2024/02/04 15:22:42 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/04 16:18:44 by htam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "demo.h"
 
-int	demo_launcher()
+int	demo_launcher(void)
 {
 	t_unit_test	*test;
 

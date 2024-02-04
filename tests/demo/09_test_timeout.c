@@ -6,14 +6,16 @@
 /*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 14:43:07 by htam              #+#    #+#             */
-/*   Updated: 2024/02/04 15:23:18 by htam             ###   ########.fr       */
+/*   Updated: 2024/02/04 16:23:14 by htam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "demo.h"
 
-int	test_timeout()
+int	test_timeout(void)
 {
-	while (42) {}
+	while (42)
+	{
+	}
 	return (0);
 }
