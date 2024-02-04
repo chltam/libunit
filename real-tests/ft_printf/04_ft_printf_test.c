@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   04_ft_printf_test.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 16:32:33 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 18:01:33 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/04 15:07:12 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/04 15:08:02 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include "./strlen/strlen.h"
+#include "./ft_printf.h"
 
-int	main(void)
+/* Basic test with a string */
+/* and %i inside            */
+/* Expected: OK             */
+int	ft_printf_test_04(void)
 {
-	printf("~~~\t0 = OK | -1 = KO\t~~~\n");
-	printf("Big string test\t\t\t: %i\n", big_string_test());
-	printf("Basic OK test\t\t\t: %i\n", basic_test());
-	printf("Basic KO test\t\t\t: %i\n", ko_test());
-	printf("Bus Error test\t\t\t: %i\n", sigbus_test());
-	return (0);
+	int	ft;
+
+	ft = ft_printf("%i", 12345);
+	if (ft == 5)
+		return (0);
+	else
+		return (-1);
 }
