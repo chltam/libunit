@@ -51,7 +51,7 @@ clean:
 fclean: clean
 	@echo "Removing libunit..."
 	@rm -f $(NAME)
-	@rm -f $(LIBFT_PATH)$(LIBFT_NAME)
+	make fclean -sC $(LIBFT_PATH)
 
 re: fclean all
 

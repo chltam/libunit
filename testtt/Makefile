@@ -5,29 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: htam <htam@student.42berlin.de>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/28 19:12:42 by htam              #+#    #+#              #
-#    Updated: 2024/02/04 15:41:45 by htam             ###   ########.fr        #
+#    Created: 2024/02/04 15:23:49 by htam              #+#    #+#              #
+#    Updated: 2024/02/04 15:30:28 by htam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := libftprintf.a
-CC := cc
-CFLAGS := -Werror -Wextra -Wall
-SRCS := ft_printf.c \
-		print_char.c \
-		print_number.c \
-		print_hex.c
-OBJS := $(SRCS:.c=.o)
-$(NAME): $(OBJS)
-		ar -rcs $(NAME) $(OBJS)
-		@echo "\033[0;92mlibftprintf.a compiled.\033[0;039m"
-		
+NAME := demo
 
-all: $(NAME)
-clean:
-	rm -f $(OBJS)
-fclean:
-	rm -f $(OBJS)
-	rm -f $(NAME)
-	@echo "\033[0;92mft_printf object file cleaned\033[0;39m"
-re: fclean all
+CC := @cc
+CFLAGS = -Wall -Werror -Wextra
+
+LIB := -L ../framework -lunit 
+LIBUNIT := ../framework/libunit.a
+
+SRCS := main.c 00_launcher.c 01_test_ok.c \
+				02_test_ko.c 03_test_sigsegv.c 04_test_sigbus.c \
+				05_test_sigabrt.c 06_test_sigfpe.c 07_test_sigpipe.c \
+				08_test_sigill.c 09_test_timeout.c \
+
+OBJS := $(SRCS:.c=.o)
+
+all: 
