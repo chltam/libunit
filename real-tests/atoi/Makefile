@@ -6,7 +6,7 @@
 #    By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/02 21:46:01 by astavrop          #+#    #+#              #
-#    Updated: 2024/02/03 19:10:44 by astavrop         ###   ########.fr        #
+#    Updated: 2024/02/04 13:54:12 by astavrop         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,21 +48,25 @@ all: $(NAME)
 
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 compile-lft:
-	cd $(LFT_PATH) && $(MAKE)
-	cp $(LFT_PATH)/$(LFT_BIN) ./
+	@cd $(LFT_PATH) && $(MAKE) -s
+	@cp $(LFT_PATH)/$(LFT_BIN) ./
 
 compile-lunit:
-	cd $(LUNIT_PATH) && $(MAKE)
-	cp $(LUNIT_PATH)/$(LUNIT_BIN) ./
+	@cd $(LUNIT_PATH) && $(MAKE) -s
+	@cp $(LUNIT_PATH)/$(LUNIT_BIN) ./
 
 $(NAME): $(OBJS) compile-lft compile-lunit
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(INCLUDES)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(INCLUDES)
 
 test: $(NAME)
-	./$(NAME)
+	@echo "\n\n\033[34;3m*** Run tests ***\033[0m"
+	-./$(NAME)
+	@echo "\033[34;3m*** Clean everything ***\033[0m\n\n"
+	$(MAKE) -s fclean
+	$(MAKE) -s clean-other
 
 clean:
 	$(RM) $(OBJS)

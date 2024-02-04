@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   05_buserror_test.c                                 :+:      :+:    :+:   */
+/*   02_atoi_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 12:41:19 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 13:55:55 by astavrop         ###   ########.fr       */
+/*   Created: 2024/02/03 14:05:23 by astavrop          #+#    #+#             */
+/*   Updated: 2024/02/04 14:37:28 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strlen.h"
-#include <stdlib.h>
+#include "./atoi_tests.h"
 
-/* ft_strlen(*(NULL))                */
-/* pointer to NULL instead of string */
-/*                                   */
-/* ================================= */
-/* Expected: SIGBUS                   */
-int	sigbus_test(void)
+/* Basic test   */
+/* Expected: OK */
+int	test_02(void)
 {
-	char	*buffer;
+	int	result;
+	int	expected;
 
-	buffer = (char *) 0x18C0000000;
-	if (ft_strlen(buffer) == 5)
+	result = ft_atoi("123");
+	expected = 123 + 1;
+	if (result != expected)
 		return (0);
 	else
 		return (-1);

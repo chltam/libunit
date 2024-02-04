@@ -6,14 +6,14 @@
 /*   By: astavrop <astavrop@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 14:05:24 by astavrop          #+#    #+#             */
-/*   Updated: 2024/02/03 18:48:00 by astavrop         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:37:01 by astavrop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./atoi_tests.h"
 #include <unistd.h>
 
-/* Test with timeout  */
+/* Test with chars    */
 /* Expected: OK       */
 int	test_03(void)
 {
@@ -22,7 +22,6 @@ int	test_03(void)
 
 	result = ft_atoi("123a1");
 	expected = 123;
-	sleep(15);
 	if (result == expected)
 		return (0);
 	else
